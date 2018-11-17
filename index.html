@@ -6,7 +6,34 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <script src="js/resources.js"></script>
+	<header>
+            <h1>Frogger Game</h1>
+<!-- A panel score is added, where points earned and number of moves can be seen -->
+            <ul class="panel-score">
+            	<li><p class = "score">0 Points</p></li>
+            	<li><p class = "moves">0 Moves</p></li>
+        	</ul>
+    </header>
+<!-- A panel of possible player images is added. The user will be able to choose the player image by clicking on any of them at any time. -->
+    <footer>
+    	<ul class="images">
+            <li class="image">
+            	<img class="boy" src="images/char-boy.png"
+            			alt="boy"></li>
+            <li class="image">
+            	<img class="cat-girl" src="images/char-cat-girl.png"
+            			alt="cat girl"></li>
+            <li class="image">
+            	<img class="horn-girl" src="images/char-horn-girl.png"
+            			alt="horn girl"></li>
+            <li class="image">
+            	<img class="pink-girl" src="images/char-pink-girl.png"
+            			alt="pint girl"></li>
+            <li class="image">
+            	<img class="princess-girl" src="images/char-princess-girl.png" 			alt="princess-girl"></li>
+        </ul>
+	</footer>
+	<script src="js/resources.js"></script>
     <script src="js/app.js"></script>
     <script src="js/engine.js"></script>
 </body>

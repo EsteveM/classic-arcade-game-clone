@@ -1,3 +1,37 @@
 body {
     text-align: center;
 }
+/* The style of the score panel is specified. */
+
+.panel-score {
+	padding: 0;
+    margin: 0;
+    display: inline-block;
+}
+
+.panel-score li {
+    display: inline-block;
+    list-style: none;
+    font-size: 22px;
+}
+/* The style of the panel of images is specified. It is noted that a rotation
+effect is added. It is activated every time the player reaches water by means
+of a "win" class. In this way, it provides the illusion of a celebration at
+that moment. */
+
+.images {
+    padding: 0;
+    margin: 0;
+    display: inline-block;
+    transform: rotateY(360deg);
+    transition: transform 2s;
+}
+
+.images.win {
+    transform: rotateY(0deg);
+}
+
+.images li {
+    display: inline-block;
+    list-style: none;
+}

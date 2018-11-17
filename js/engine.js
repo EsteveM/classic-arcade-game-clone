@@ -9,7 +9,7 @@
  * drawn but that is not the case. What's really happening is the entire "scene"
  * is being drawn over and over, presenting the illusion of animation.
  *
- * This engine makes the canvas' context (ctx) object globally available to make 
+ * This engine makes the canvas' context (ctx) object globally available to make
  * writing app.js a little simpler to work with.
  */
 
@@ -90,6 +90,10 @@ var Engine = (function(global) {
      * render methods.
      */
     function updateEntities(dt) {
+    /* The call to the update method of the collectible is added */
+        allCollectibles.forEach(function(collectible) {
+            collectible.update();
+        });
         allEnemies.forEach(function(enemy) {
             enemy.update(dt);
         });
@@ -117,7 +121,7 @@ var Engine = (function(global) {
             numRows = 6,
             numCols = 5,
             row, col;
-        
+
         // Before drawing, clear existing canvas
         ctx.clearRect(0,0,canvas.width,canvas.height)
 
@@ -149,6 +153,11 @@ var Engine = (function(global) {
         /* Loop through all of the objects within the allEnemies array and call
          * the render function you have defined.
          */
+        /* The call to the render method of the collectible is added */
+        allCollectibles.forEach(function(collectible) {
+            collectible.render();
+        });
+
         allEnemies.forEach(function(enemy) {
             enemy.render();
         });
@@ -173,7 +182,16 @@ var Engine = (function(global) {
         'images/water-block.png',
         'images/grass-block.png',
         'images/enemy-bug.png',
-        'images/char-boy.png'
+        'images/char-boy.png',
+    /* A collectible is added to the game */
+        'images/gem-green.png',
+    /* The rest of player images are added to the game so that the user
+       can choose any of them at any time */
+        'images/char-boy.png',
+        'images/char-cat-girl.png',
+        'images/char-horn-girl.png',
+        'images/char-pink-girl.png',
+        'images/char-princess-girl.png'
     ]);
     Resources.onReady(init);
 
